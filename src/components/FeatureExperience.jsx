@@ -45,9 +45,13 @@ export default function FeatureExperience() {
         .bento__card--large { grid-column: span 2; }
         .bento__card:hover { border-color: rgba(0,229,160,0.2); transform: translateY(-2px); }
         .bento__card--active {
-          border-color: rgba(0,229,160,0.5) !important;
-          box-shadow: 0 0 40px rgba(0,229,160,0.1), inset 0 0 40px rgba(0,229,160,0.03) !important;
-          background: rgba(0,229,160,0.04) !important;
+          border-color: rgba(0,229,160,0.65) !important;
+          box-shadow:
+            0 0 0 1px rgba(0,229,160,0.25),
+            0 0 48px rgba(0,229,160,0.18),
+            inset 0 0 32px rgba(0,229,160,0.05) !important;
+          background: rgba(0,229,160,0.06) !important;
+          transform: translateY(-3px);
         }
         .bento__icon-wrap {
           width: 44px; height: 44px; border-radius: 10px;
@@ -74,11 +78,20 @@ export default function FeatureExperience() {
         }
         .bento__glow {
           position: absolute; inset: -1px; border-radius: inherit;
-          background: linear-gradient(135deg, rgba(0,229,160,0.06), transparent 60%);
-          opacity: 0; transition: opacity .3s ease;
+          background: linear-gradient(135deg, rgba(0,229,160,0.09), transparent 55%);
+          opacity: 0; transition: opacity .25s ease;
           pointer-events: none;
         }
         .bento__card--active .bento__glow { opacity: 1; }
+        /* Accent left-edge strip on active card */
+        .bento__card::after {
+          content: '';
+          position: absolute; top: 12%; bottom: 12%; left: 0;
+          width: 3px; border-radius: 0 3px 3px 0;
+          background: var(--accent);
+          opacity: 0; transition: opacity .25s ease;
+        }
+        .bento__card--active::after { opacity: 1; }
 
         /* ── ACCORDION ── */
         .accordion { display: flex; flex-direction: column; gap: .5rem; }
@@ -92,6 +105,11 @@ export default function FeatureExperience() {
           width: 100%; display: flex; align-items: center; gap: .75rem;
           padding: 1rem 1.25rem; background: none; text-align: left;
           color: var(--text); font-weight: 600; font-size: .95rem;
+          transition: background .2s ease, color .2s ease;
+        }
+        .accordion__item--active .accordion__btn {
+          background: rgba(0,229,160,0.07);
+          color: var(--accent);
         }
         .accordion__btn-icon { width: 20px; height: 20px; filter: invert(1) sepia(1) saturate(3) hue-rotate(100deg); flex-shrink: 0; }
         .accordion__btn-title { flex: 1; }

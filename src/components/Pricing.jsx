@@ -75,6 +75,10 @@ const Pricing = memo(function Pricing() {
             Simple, <span className="gradient-text">transparent</span> pricing
           </h2>
           <p className="pricing__sub">Scale your automation without scaling your bill.</p>
+          <p className="pricing__helper">
+            Prices are calculated dynamically from a multi-currency pricing matrix.
+            Annual billing applies a flat 20% discount.
+          </p>
         </header>
 
         {/* ─── Controls: billing toggle + currency switch ─── */}
@@ -193,8 +197,20 @@ const Pricing = memo(function Pricing() {
         .pricing {
           background: linear-gradient(180deg, transparent, rgba(0,180,216,0.02) 50%, transparent);
         }
-        .pricing__header { text-align: center; max-width: 500px; margin: 0 auto 2.5rem; }
+        .pricing__header { text-align: center; max-width: 580px; margin: 0 auto 2.5rem; }
         .pricing__sub { margin-top: .5rem; }
+        .pricing__helper {
+          margin-top: .5rem;
+          font-size: .78rem;
+          color: var(--text-dim);
+          line-height: 1.6;
+          font-family: var(--font-mono);
+          border: 1px solid var(--border);
+          border-radius: 6px;
+          padding: .5rem .85rem;
+          background: rgba(255,255,255,0.02);
+          display: inline-block;
+        }
 
         .pricing__controls {
           display: flex; flex-wrap: wrap; gap: 1rem;
