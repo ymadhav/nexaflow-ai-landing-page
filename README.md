@@ -7,7 +7,9 @@ The project is built with React + Vite, custom CSS, semantic HTML, responsive la
 ## Live Links
 
 **Live Website:** https://nexaflow-ai-landing-page.vercel.app/
+
 **GitHub Repository:** https://github.com/ymadhav/nexaflow-ai-landing-page
+
 **Demo Video:** https://drive.google.com/file/d/1QrtYJMjLj3DlHjpMk7YZKlTs1yn-h0hm/view?usp=drive_link
 
 ## Tech Stack
